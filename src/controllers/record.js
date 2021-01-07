@@ -1,5 +1,13 @@
 import { connection } from 'mongoose';
 
+/**
+* @description fetch records
+* @param {object} req http request object
+* @param {object} res http response object
+*@function fetchRecords
+
+* @returns {object} response
+*/
 const fetchRecords = async (req, res) => {
   const {
     body: {
@@ -10,9 +18,11 @@ const fetchRecords = async (req, res) => {
     }
   } = req;
 
-  const collection = await connection.db.collection('records');
-
   try {
+    console.log('I am here');
+    const collection = await connection.db.collection('records');
+    console.log('I am happy');
+
     const projectRecord = {
       $project: {
         _id: false,
@@ -39,13 +49,6 @@ const fetchRecords = async (req, res) => {
 
     const records = await collection.aggregate([projectRecord, matchRecord]).toArray();
 
-    if (!records) {
-      return res.status(404).json({
-        code: 1,
-        message: 'No record found'
-      });
-    }
-
     return res.status(200).json({
       code: 0,
       message: 'Success',
@@ -53,6 +56,7 @@ const fetchRecords = async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
+      code: 0,
       message: 'Failed to fetch records',
     });
   }

@@ -3,8 +3,10 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import 'dotenv/config';
 import mongoose from 'mongoose';
+import swaggerUi from 'swagger-ui-express';
 import connectDB from './config';
 import router from './routes/routes';
+import swaggerDocument from '../swagger.json';
 
 const { log } = console;
 
@@ -22,6 +24,8 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => log('Database connected')
 );
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use('/api/v1', router);
 
