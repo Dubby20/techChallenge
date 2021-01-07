@@ -1,7 +1,7 @@
 # Tech Challenge
 
 [![Build Status](https://travis-ci.com/Dubby20/techChallenge.svg?branch=main)](https://travis-ci.com/Dubby20/techChallenge)
-[![Coverage Status](https://coveralls.io/repos/github/Dubby20/techChallenge/badge.svg?branch=main)](https://coveralls.io/github/Dubby20/techChallenge?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/Dubby20/techChallenge/badge.svg)](https://coveralls.io/github/Dubby20/techChallenge)
 
 ### Features
 
