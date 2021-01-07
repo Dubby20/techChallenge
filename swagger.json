@@ -1,0 +1,76 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Getir Backend Tech Challenge API documentation",
+    "version": "1.0.0",
+    "title": "Getir Backend Tech Challenge",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "jacynnadi20@gmail.com"
+    }
+  },
+  "host": "https://getir-tech-challenge.herokuapp.com/",
+  "basePath": "api/v1",
+  "tags": [
+    {
+      "name": "record",
+      "description": "Everything about records"
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/records": {
+      "post": {
+        "tags": ["record"],
+        "summary": "Fetch records",
+        "description": "Fetch records using this filtering options: startDate, endDate, minCount and maxCount",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Records to be filtered",
+            "required": true,
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/requestPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{ code: 0, message: 'Success', records: [] }"
+          },
+          "422": {
+            "description": "{ code: 1, message: 'startDate and endDate must be a valid date in a YYYY-MM-DD format }"
+          },
+          "500": {
+            "description": "{ code: 1, message: 'Failed to fetch records ' }"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "requestPayload": {
+      "required": ["startDate", "endDate", "minCount", "maxCount"],
+      "properties": {
+        "startDate": {
+          "type": "string",
+        "format": "date-time"
+        },
+        "endDate": {
+         "type": "string",
+        "format": "date-time"
+        },
+        "minCount": {
+          "type": "number"
+        },
+        "maxCount": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
