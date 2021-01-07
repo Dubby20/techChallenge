@@ -9,8 +9,8 @@
       "email": "jacynnadi20@gmail.com"
     }
   },
-  "host": "https://getir-tech-challenge.herokuapp.com/",
-  "basePath": "api/v1",
+  "host": "getir-tech-challenge.herokuapp.com",
+  "basePath": "/api/v1",
   "tags": [
     {
       "name": "record",
@@ -34,7 +34,7 @@
             "required": true,
             "type": "object",
             "schema": {
-              "$ref": "#/definitions/requestPayload"
+              "$ref": "#/definitions/payload"
             }
           }
         ],
@@ -53,7 +53,7 @@
     }
   },
   "definitions": {
-    "requestPayload": {
+    "payload": {
       "required": ["startDate", "endDate", "minCount", "maxCount"],
       "properties": {
         "startDate": {
