@@ -4,3 +4,5 @@ package-lock.json
 .nyc_output
 coverage
 .vscode
+dist/
+.coveralls.yml
