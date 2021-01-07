@@ -19,9 +19,7 @@ const fetchRecords = async (req, res) => {
   } = req;
 
   try {
-    console.log('I am here');
     const collection = await connection.db.collection('records');
-    console.log('I am happy');
 
     const projectRecord = {
       $project: {

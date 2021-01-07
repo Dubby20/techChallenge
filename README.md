@@ -1,6 +1,7 @@
 # techChallenge
 
-
+[![Build Status](https://travis-ci.com/Dubby20/techChallenge.svg?branch=main)](https://travis-ci.com/Dubby20/techChallenge)
+[![Coverage Status](https://coveralls.io/repos/github/Dubby20/techChallenge/badge.svg?branch=main)](https://coveralls.io/github/Dubby20/techChallenge?branch=main)
 ### Features
 
 - Fetch data in a mongoDB collection
@@ -89,7 +90,7 @@ Example request body:
 
 ## Demo
 
-A fully functional demo of this project hosted on Heroku is available at [Tech Challenge](https://getir-tech-challenge.herokuapp.com/)
+A fully functional demo of this project hosted on Heroku is available at [Getir Tech Challenge](https://getir-tech-challenge.herokuapp.com/)
 
 ### Testing the application
 

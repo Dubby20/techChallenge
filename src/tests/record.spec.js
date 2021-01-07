@@ -104,7 +104,7 @@ describe('Fetch records', () => {
           status,
           body: { code, error },
         } = res;
-        console.log('>>>>>>', res.body);
+
         expect(status).to.be.equal(422);
         expect(code).to.be.equal(1);
         expect(error).to.be.equal(
@@ -123,7 +123,7 @@ describe('Fetch records', () => {
           status,
           body: { code, error },
         } = res;
-        console.log(res.body);
+
         expect(status).to.be.equal(422);
         expect(code).to.be.equal(1);
         expect(error).to.be.equal('endDate is required');
@@ -207,7 +207,7 @@ describe('Fetch records', () => {
           status,
           body: { code, error },
         } = res;
-        console.log(res.body);
+
         expect(status).to.be.equal(422);
         expect(code).to.be.equal(1);
         expect(error).to.be.equal('minCount is required');
@@ -224,7 +224,7 @@ describe('Fetch records', () => {
           status,
           body: { code, error },
         } = res;
-        console.log(res.body);
+
         expect(status).to.be.equal(422);
         expect(code).to.be.equal(1);
         expect(error).to.be.equal('maxCount is required');
