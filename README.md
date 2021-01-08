@@ -48,7 +48,7 @@ List of libraries, tools, etc used for this project
 - [nyc](https://github.com/istanbuljs/nyc) - The Istanbul command line interface.
 
 ### API Documentation
-[API Docs](https://getir-tech-challenge.herokuapp.com/api-docs)
+[SWAGGER API Docs](https://getir-tech-challenge.herokuapp.com/api-docs)
 
 ### :star: Documentation :star:
 

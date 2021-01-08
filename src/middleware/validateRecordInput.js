@@ -7,19 +7,19 @@ import Joi from 'joi';
 * @returns {error} response
 */
 const validateRecordInput = Joi.object({
-  startDate: Joi.date()
-    .required()
-    .messages({
-      'date.base': 'startDate must be a valid date in a YYYY-MM-DD format',
-      'any.required': 'startDate is required',
-    }),
+  startDate: Joi.date().required().messages({
+    'date.base': 'startDate must be a valid date in a YYYY-MM-DD format',
+    'any.required': 'startDate is required',
+  }),
 
   endDate: Joi.date()
     .required()
     .greater(Joi.ref('startDate'))
+    .max('now')
     .messages({
       'date.base': 'endDate must be a valid date in a YYYY-MM-DD format',
       'date.greater': 'endDate must be greater than startDate',
+      'date.max': 'endDate must not exceed current date',
       'any.required': 'endDate is required',
     }),
 
@@ -34,14 +34,11 @@ const validateRecordInput = Joi.object({
       'number.greater': 'maxCount must be greater than minCount',
     }),
 
-  minCount: Joi.number()
-    .required()
-    .strict()
-    .messages({
-      'number.base': 'minCount must be numeric',
-      'number.empty': 'Please enter the minCount',
-      'any.required': 'minCount is required',
-    }),
+  minCount: Joi.number().required().strict().messages({
+    'number.base': 'minCount must be numeric',
+    'number.empty': 'Please enter the minCount',
+    'any.required': 'minCount is required',
+  }),
 });
 
 export default validateRecordInput;
