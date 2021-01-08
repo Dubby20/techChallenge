@@ -37,8 +37,8 @@ List of libraries, tools, etc used for this project
 - [Express](https://expressjs.com/) - A web framework for [Nodejs](https://nodejs.org/en/)
 - [Babel](https://babeljs.io) - Javascript compiler.
 - [Eslint](https://eslint.org/) - Javascript linter. [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb) style [guide](https://github.com/airbnb/javascript)
-- [MongoDB](https://www.mongodb.com/)
--[Mongoose](https://mongoosejs.com/)
+- [MongoDB](https://www.mongodb.com/) - MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era
+- [Mongoose](https://mongoosejs.com/) - An elegant mongodb object modeling for node.js
 
 ### Testing tools
 
@@ -65,6 +65,17 @@ List of endpoints exposed by the service
 Required fields:  `startDate`, `endDate`, `minCount`, `maxCount`
 
 Example request body:
+
+```source-json
+{
+"startDate": "2016-01-26",
+"endDate": "2018-02-02",
+"minCount": 2700,
+"maxCount": 3000
+}
+```
+
+Example response body:
 
 ```source-json
 {
